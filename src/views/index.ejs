@@ -1,0 +1,21 @@
+<%- include('partials/header')%>
+
+<%if (entries.length) { %>
+
+    <% entries.forEach(function (entry) { %>
+        <div class="card">
+            <div class="cardheader bg-primary text-white" >
+                <p><%= entry.published %></p>
+            </div>
+            <div class="card-body">
+                <h1><%= entry.title %></h1>
+                <p>><%= entry.content %></p>
+            </div>
+        </div>
+        <% }) %>
+
+<% } else { %>
+        <p>No Entries! <a href="/new-entry">Add one!</a></p>
+<% } %>
+
+<%- include('partials/footer')%>
